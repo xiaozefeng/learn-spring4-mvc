@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 @ResponseBody
 public class DemoAnnoController {
 
-    @RequestMapping(produces = "text/plain;charset=UTF-8")
+    @RequestMapping(value = "/",produces = "text/plain;charset=UTF-8")
     @ResponseBody
     public String index(HttpServletRequest request) {
         return "url:" + request.getRequestURL() + "can access";
@@ -23,7 +23,7 @@ public class DemoAnnoController {
 
     @RequestMapping(value = "/pathvar/{str}", produces = "text/plain;charset=UTF-8")
     @ResponseBody
-    public String demoPathVar(@PathVariable String str, HttpServletRequest request){
+    public String demoPathVar(@PathVariable String str, HttpServletRequest request) {
         return "url:" + request.getRequestURL() + "can access, str:" + str;
     }
 
@@ -41,8 +41,14 @@ public class DemoAnnoController {
 
     @RequestMapping(value = {"/name1", "/name2"}, produces = "text/plain;charset=UTF-8")
     @ResponseBody
-    public String remove(HttpServletRequest request){
+    public String remove(HttpServletRequest request) {
         return "url:" + request.getRequestURL() + " can access";
+    }
+
+    @RequestMapping("errorPage")
+    public String error() {
+        int i = 10 / 0;
+        return "";
     }
 
 }
