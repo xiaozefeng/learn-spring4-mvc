@@ -10,4 +10,5 @@
 <body>
     <h1>Hello World</h1>
 </body>
+<script src="/assets/js/jquery.min.js"></script>
 </html>

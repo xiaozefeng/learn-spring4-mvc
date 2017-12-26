@@ -81,6 +81,14 @@
             <artifactId>logback-access</artifactId>
             <version>1.0.13</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
